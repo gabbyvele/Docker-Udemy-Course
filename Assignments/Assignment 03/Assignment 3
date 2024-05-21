@@ -1,0 +1,17 @@
+-- Create network 
+docker network create hello_network 
+
+Create Elastic Search and attach to network - Run twice
+docker run -e "discovery.type=single-node" -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" -e "xpack.security.enabled=false" --network <your_network> -d --network-alias search elasticsearch:8.4.3
+
+-- Inspect network, should see both containers under containers section
+docker network inspect hello_network 
+
+-- Run 3rd Container to do nslookup
+docker run --rm -it --network hello_network alpine
+
+-- Install Curl
+apk add curl
+
+-- Curl the hello_network, network alias is not netwok name
+curl search:9200

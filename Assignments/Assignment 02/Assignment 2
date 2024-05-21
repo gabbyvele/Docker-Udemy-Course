@@ -1,0 +1,25 @@
+-- Run centos
+docker container exec -it centos:7 bash
+
+-- Install curl
+yum update curl
+
+-- Curl version
+curl --version
+
+-- Delete container
+docker container ps -a
+docker container rm 8b --force 
+
+-- Run Ubuntu
+docker container run -it ubuntu:14.04 bash
+
+-- Install curl
+apt-get update && apt-get install curl
+
+-- Curl Version
+ curl --version
+
+-- Delete 
+ docker container ps -a
+ docker container rm 8b --force 
