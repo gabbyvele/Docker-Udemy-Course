@@ -1,0 +1,20 @@
+// Create a Volume
+docker volume create psql
+
+// Run the container with the created volume 
+docker run -d --name psql1 -e POSTGRES_PASSWORD=admin -v psql:/var/lib/postgresql/data postgres:15.1
+
+// For container logs
+docker logs psql1
+
+// Stop the container
+docker stop psql1
+
+// Run new container for updated version with the same created volume
+docker run -d --name psql2 -e POSTGRES_PASSWORD=admin -v psql:/var/lib/postgresql/data postgres:15.2
+
+// For container logs
+docker logs psql2
+
+// Stop the container
+docker stop psql2

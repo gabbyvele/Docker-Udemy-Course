@@ -1,0 +1,4 @@
+// CD to bindmount-sample-1
+cd udemy-docker-mastery/bindmount-sample-1/
+
+docker run -p 80:4000 -v "$(pwd):/site" bretfisher/jekyll-serve 
