@@ -16,3 +16,10 @@ docker service create --name db --network backend --mount type=volume,source=db-
 
 // Create Result
 root@node2:~# docker service create --name result --network backend -p 5001:80 dockersamples/examplevotingapp_result:before
+
+// Cleanup
+docker service rm worker
+docker service rm vote
+docker service rm result
+docker service rm redis
+docker service rm db

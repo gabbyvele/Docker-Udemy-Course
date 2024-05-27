@@ -1,3 +1,5 @@
 // Copy file to server
 scp udemy-docker-mastery/swarm-stack-1/example-voting-app-stack.yml root@64.226.87.223:/root/example-voting-app-stack.yml 
 
+// Deploy script 
+docker stack deploy -c example-voting-app-stack.yml voteapp

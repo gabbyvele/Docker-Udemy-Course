@@ -1,0 +1,11 @@
+// Go to Dir
+$ cd udemy-docker-mastery/swarm-stack-3 
+
+// Run compose, docker-compose.override.yml is the default
+$ docker compose up -d
+
+// Run compose in a CI tool would need you to define the files in order of precidence with -f
+$ docker compose -f docker-compose.yml -f docker-compose-test.yml
+
+// Clean up
+$ docker compose down

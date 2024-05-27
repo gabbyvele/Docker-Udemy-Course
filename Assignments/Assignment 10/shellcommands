@@ -1,0 +1,9 @@
+// Copy the file
+$ scp assignments/Assignment\ 10/docker-compose.yml root@64.226.87.223:/root/
+
+// Create Secrets in Server
+$ echo 'myDBpassWORD' | docker secret create psql_pass -
+
+// Run Stack Deploy
+$ docker stack deploy -c docker-compose.yml drupalApp
+
